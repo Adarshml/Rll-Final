@@ -1,0 +1,126 @@
+<div class="container">
+  <div class="row">
+    <div class="col-50">
+      <h3>Payment</h3>
+      <form [formGroup]="checkoutForm">
+        <label class="form-label">Accepted Cards</label>
+        <div class="icon-container">
+          <i class="fa fa-cc-visa" style="color: navy"></i>
+          <i class="fa fa-cc-amex" style="color: blue"></i>
+          <i class="fa fa-cc-mastercard" style="color: red"></i>
+          <i class="fa fa-cc-discover" style="color: orange"></i>
+        </div>
+        <label class="form-label"><b>Name on Card</b></label>
+        <input
+          formControlName="cardname"
+          type="text"
+          class="form-control"
+          id="cardname"
+          name="cardname"
+          placeholder=" "
+        />
+        <span
+          class="text-danger"
+          *ngIf="cardname && cardname.touched && cardname.invalid"
+          >*Cardname is required</span
+        >
+        <label class="form-label"><b>Credit card number</b></label>
+        <input
+          formControlName="cardnumber"
+          type="text"
+          class="form-control"
+          id="cardnumber"
+          name="cardnumber"
+          placeholder=" "
+        />
+        <span
+          class="text-danger"
+          *ngIf="cardnumber && cardnumber.touched && cardnumber.invalid"
+          >*Cardnumber is required</span
+        >
+        <label class="form-label"><b> Month</b></label>
+        <input
+          formControlName="expmonth"
+          type="text"
+          class="form-control"
+          id="expmonth"
+          name="expmonth"
+          placeholder=" "
+        />
+        <span
+          class="text-danger"
+          *ngIf="expmonth && expmonth.touched && expmonth.invalid"
+          >*ExpMonth is required</span
+        >
+        <div class="row">
+          <div class="col-50">
+            <label class="form-label"><b>Exp Year</b></label>
+            <input
+              formControlName="expyear"
+              type="text"
+              class="form-control"
+              id="expyear"
+              name="expyear"
+              placeholder=" "
+            />
+            <span
+              class="text-danger"
+              *ngIf="expyear && expyear.touched && expyear.invalid"
+              >*ExpYear is required</span
+            >
+          </div>
+
+          <div class="col-50">
+            <label class="form-label"><b>CVV</b></label>
+
+            <input
+              formControlName="cvv"
+              type="text"
+              class="form-control"
+              id="cvv"
+              name="cvv"
+              placeholder=" "
+            />
+            <span class="text-danger" *ngIf="cvv && cvv.touched && cvv.invalid"
+              >*CVV is required</span
+            >
+          </div>
+        </div>
+        <button
+          type="submit"
+          [disabled]="!checkoutForm.valid"
+          class="btn btn-success"
+          (click)="checkOut()"
+        >
+          Submit
+        </button>
+      </form>
+
+
+<!-- Modal -->
+
+<div class="modal" tabindex="-1" role="dialog" id = "modalos">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <img 
+        src="/assets/logo5.png"
+        class="d-inline-block" 
+        alt="navlogo"
+      />
+      <h5 class="modal-title">Order Successful</h5>
+      <button type="button" class="btn btn-primary" routerLink="/userHome">Back to store</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+      
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

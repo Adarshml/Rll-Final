@@ -1,0 +1,18 @@
+.navbar-brand{
+    color: rgb(106, 151, 44);
+    font-weight: bold;
+    font-size: 25px;
+    font-family:"Serif";
+}
+.navbar-brand:hover{
+    color: rgb(49, 122, 200);
+}
+.nav-link{
+   color: rgb(150, 148, 108);
+}
+.nav-link:hover {
+    color: rgb(49, 61, 200);
+  }
+.main{
+    background-image: linear-gradient(antiquewhite, white);
+  }
